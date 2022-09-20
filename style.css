@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300&family=Ubuntu+Mono&display=swap');
+
+/* font-family: 'JetBrains Mono', monospace;
+font-family: 'Ubuntu Mono', monospace; */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu Mono', monospace;
+    background-color: #0d1117;
+    color: silver;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #161b22;
+    cursor: pointer;
+    padding: 20px;
+    color: silver;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.fill {
+    height: 25px;
+    width: 280px;
+    border-radius: 5px;
+    padding-left: 20px;
+    background-color: #161b22;
+    color: silver;
+}
+
+.enter {
+    height: 25px;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 5px;
+    width: 70px;
+    background: linear-gradient(267.49deg, rgba(100, 206, 19, 0.4), rgba(91, 35, 225, .25));
+    cursor: pointer;
+    color: silver;
+    border: #0d1117
+}
+
+.enter:hover {
+    margin: 5px;
+}
+
+.silver {
+    padding-left: 300px;
+}
+
+.aside {
+    margin-left: 150px;
+    margin-top: 30px;
+    gap: 15px;
+    display: flex;
+    align-items: flex-start;
+    width: 30vw;
+    justify-content: flex-start;
+    float: left;
+    flex-direction: column;
+}
+
+.flex {
+    margin-right: 150px;
+    margin-top: 40px;
+    gap: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.location {
+    gap: 10px;
+    display: flex;
+    place-items: center;
+}
+
+.twitter {
+    gap: 10px;
+    display: flex;
+    place-items: center;
+}
+
+.flex>div:hover {
+    color: #4bd28d;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.append{
+    color: #4bd28d;
+    text-decoration: underline;
+}
+
+.follow {
+    height: -2px;
+    width: -3px;
+    background: #0d1117;
+    border: #0d1117;
+}
+
+.follow:hover {
+    margin-top: 2px;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.landinginput {
+    height: 45px;
+    width: 300px;
+    border-radius: 5px;
+    padding-left: 20px;
+    background-color: #161b22;
+    color: silver;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.inputbutton {
+    height: 45px;
+    width: 100px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 15px;
+    background: linear-gradient(267.49deg, rgba(100, 206, 19, 0.4), rgba(91, 35, 225, .25));
+    cursor: pointer;
+    color: silver;
+    font-family: 'Ubuntu Mono', monospace;
+
+}
+
+.inputbutton:hover {
+    margin: 4px;
+}
+
+.table {
+    position: relative;
+    left: -100px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.addlist {
+    border: .20px solid #4bd28d;
+    border-collapse: collapse;
+
+}
+
+td,
+th {
+    width: 250px;
+}
+
+.line {
+    z-index: -3;
+    width: 100vw;
+    height: 1px;
+    background-color: silver;
+    position: relative;
+    top: 15px;
+}
+
+.id {
+    margin-right: 450px;
+}
+
+tr{
+    justify-content: center;
+    align-items: center;
+}
+
+.repos:visited{
+    text-decoration: underline;
+    color: #4bd28d;
+}
