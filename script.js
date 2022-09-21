@@ -9,9 +9,16 @@ let locationnn = document.querySelector('.location')
 let twitter = document.querySelector('.twitter')
 let tablerow = document.querySelector('.tablerow')
 let tablehead = document.getElementsByTagName('th')
+let pagination = document.querySelector(".pagination")
+let heading = document.querySelector(".heading")
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+
+    pagination.style.visibility = "hidden"
+    heading.style.visibility = "hidden"
+
 
     let reporow = Array.from(document.getElementsByClassName('reporow'))
     reporow.forEach((element, i) => {
@@ -48,17 +55,22 @@ form.addEventListener('submit', (e) => {
                 tablehead[1].innerHTML = "NAME"
                 tablehead[2].innerHTML = "URL"
                 tablehead[3].innerHTML = "LANGUAGE"
+                heading.style.visibility = "visible"
 
-                let into= document.querySelector(".styledynam")
-                let s= document.querySelector('.s')
-                let t=document.querySelector('.t')
-                let y=document.querySelector('.y')
+                let into = document.querySelector(".styledynam")
+                let s = document.querySelector('.s')
+                let t = document.querySelector('.t')
+                let y = document.querySelector('.y')
 
                 into.classList.add("addlist")
                 s.classList.add("addlist")
                 t.classList.add("addlist")
                 y.classList.add("addlist")
                 repos.classList.add('append')
+
+                pagination.style.visibility = "visible"
+
+
 
                 fetch(getrepos)
                     .then((response) => {
@@ -68,19 +80,107 @@ form.addEventListener('submit', (e) => {
                         console.log(data[1].id)
                         console.log(repodata)
 
+                        enter.addEventListener('click', () => {
+                            document.location.reload()
+
+                        })
+
+
+
                         let reporow = Array.from(document.getElementsByClassName('reporow'))
 
                         reporow.forEach((element, i) => {
+
                             element.getElementsByClassName("id")[0].innerHTML = repodata[i].id
                             element.getElementsByClassName("name")[0].innerHTML = repodata[i].name
                             element.getElementsByClassName("url")[0].innerHTML = repodata[i].url
                             element.getElementsByClassName("language")[0].innerHTML = repodata[i].language
+
+                            let one = document.querySelector(".one")
+                            let two = document.querySelector(".two")
+                            let three = document.querySelector(".three")
+                            let four = document.querySelector(".four")
+                            let five = document.querySelector(".five")
+
+
+
+                            one.addEventListener('click', () => {
+                                element.getElementsByClassName("id")[0].innerHTML = repodata[i].id
+                                element.getElementsByClassName("name")[0].innerHTML = repodata[i].name
+                                element.getElementsByClassName("url")[0].innerHTML = repodata[i].url
+                                element.getElementsByClassName("language")[0].innerHTML = repodata[i].language
+                                one.style.border = "5px solid #4bd28d"
+                                if (((two || three || four || five).style.border) = "5px") {
+                                    five.style.border = "1px solid #4bd28d"
+                                    four.style.border = "1px solid #4bd28d"
+                                    three.style.border = "1px solid #4bd28d"
+                                    two.style.border = "1px solid #4bd28d"
+                                }
+                            })
+
+                            two.addEventListener('click', () => {
+                                element.getElementsByClassName("id")[0].innerHTML = repodata[i + 5].id
+                                element.getElementsByClassName("name")[0].innerHTML = repodata[i + 5].name
+                                element.getElementsByClassName("url")[0].innerHTML = repodata[i + 5].url
+                                element.getElementsByClassName("language")[0].innerHTML = repodata[i + 5].language
+                                two.style.border = "5px solid #4bd28d"
+                                if (((one || three || four || five).style.border) = "5px") {
+                                    five.style.border = "1px solid #4bd28d"
+                                    four.style.border = "1px solid #4bd28d"
+                                    three.style.border = "1px solid #4bd28d"
+                                    one.style.border = "1px solid #4bd28d"
+                                }
+                            })
+
+
+                            three.addEventListener('click', () => {
+                                element.getElementsByClassName("id")[0].innerHTML = repodata[i + 10].id
+                                element.getElementsByClassName("name")[0].innerHTML = repodata[i + 10].name
+                                element.getElementsByClassName("url")[0].innerHTML = repodata[i + 10].url
+                                element.getElementsByClassName("language")[0].innerHTML = repodata[i + 10].language
+                                three.style.border = "5px solid #4bd28d"
+                                if (((two || one || four || five).style.border) = "5px") {
+                                    five.style.border = "1px solid #4bd28d"
+                                    four.style.border = "1px solid #4bd28d"
+                                    one.style.border = "1px solid #4bd28d"
+                                    two.style.border = "1px solid #4bd28d"
+                                }
+
+
+                            })
+                            four.addEventListener('click', () => {
+                                element.getElementsByClassName("id")[0].innerHTML = repodata[i + 15].id
+                                element.getElementsByClassName("name")[0].innerHTML = repodata[i + 15].name
+                                element.getElementsByClassName("url")[0].innerHTML = repodata[i + 15].url
+                                element.getElementsByClassName("language")[0].innerHTML = repodata[i + 15].language
+                                four.style.border = "5px solid #4bd28d"
+                                if (((two || three || one || five).style.border) = "5px") {
+                                    five.style.border = "1px solid #4bd28d"
+                                    one.style.border = "1px solid #4bd28d"
+                                    three.style.border = "1px solid #4bd28d"
+                                    two.style.border = "1px solid #4bd28d"
+                                }
+
+
+                            })
+                            five.addEventListener('click', () => {
+                                element.getElementsByClassName("id")[0].innerHTML = repodata[i + 20].id
+                                element.getElementsByClassName("name")[0].innerHTML = repodata[i + 20].name
+                                element.getElementsByClassName("url")[0].innerHTML = repodata[i + 20].url
+                                element.getElementsByClassName("language")[0].innerHTML = repodata[i + 20].language
+                                five.style.border = "5px solid #4bd28d"
+                                if (((two || three || four || one).style.border) = "5px") {
+                                    one.style.border = "1px solid #4bd28d"
+                                    four.style.border = "1px solid #4bd28d"
+                                    three.style.border = "1px solid #4bd28d"
+                                    two.style.border = "1px solid #4bd28d"
+                                }
+                            })
                         })
                     })
             })
         })
 })
-
 
 enter.addEventListener('click', () => {
     let stylebutton = {

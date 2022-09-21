@@ -41,7 +41,7 @@ body {
     background: linear-gradient(267.49deg, rgba(100, 206, 19, 0.4), rgba(91, 35, 225, .25));
     cursor: pointer;
     color: silver;
-    border: #0d1117
+    border: 1px solid silver;
 }
 
 .enter:hover {
@@ -93,16 +93,17 @@ body {
     cursor: pointer;
 }
 
-.append{
+.append {
     color: #4bd28d;
     text-decoration: underline;
 }
+
 
 .follow {
     height: -2px;
     width: -3px;
     background: #0d1117;
-    border: #0d1117;
+    border: 1px solid silver;
 }
 
 .follow:hover {
@@ -144,13 +145,19 @@ body {
 
 .table {
     position: relative;
-    left: -100px;
+    left: -50px;
     margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
     font-size: 18px;
+    overflow-x:hidden;
+}
+
+thead,tbody{
+    width: 300px;
+
 }
 
 .addlist {
@@ -159,9 +166,23 @@ body {
 
 }
 
+.reporow {
+    margin-top: 50px;
+}
+
+
 td,
 th {
-    width: 250px;
+    width: 184px;
+    word-wrap: break-word;
+}
+
+.url{
+    word-wrap: break-word;
+}
+
+td{
+    height: 40px;
 }
 
 .line {
@@ -177,12 +198,35 @@ th {
     margin-right: 450px;
 }
 
-tr{
+tr {
     justify-content: center;
     align-items: center;
 }
 
-.repos:visited{
+.repos:visited {
     text-decoration: underline;
     color: #4bd28d;
 }
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    margin-top: 80px;
+    visibility: hidden;
+}
+
+.pagination>div {
+    border: 1px solid #4bd28d;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-family: 'Ubuntu Mono', monospace;
+    cursor: pointer;
+}
+
